@@ -1,11 +1,13 @@
 <section class="movie-results container">
   <h2>Results</h2>
-  <div class="results-list">
+  <div class="results-list row">
     <figure ng-repeat="movie in results.movieResults" class="col-md-4">
-      <div class="inner panel panel-default">
-        <h4>{{movie.Title}}</h4>
-        <p>Year Released: {{movie.Year}}</p>
-      </div>
+      <a ui-sref="show({ movieId: movie.imdbID })">
+        <div class="inner panel panel-default">
+          <h4>{{movie.Title}}</h4>
+          <p>Year Released: {{movie.Year}}</p>
+        </div>
+      </a>
     </figure>
   </div>
 </section>

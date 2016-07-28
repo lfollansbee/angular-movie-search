@@ -10,8 +10,8 @@ app.config(function($stateProvider, $urlRouterProvider) {
       controller: "SearchController"
     })
     .state("show", {
-      url: "/show/:id",
-      templateUrl: "/templates/movies.html",
+      url: "/show/:movieId",
+      templateUrl: "/templates/movie.html",
       controller: "ShowController"
     })
 })
