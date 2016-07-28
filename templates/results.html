@@ -1,0 +1,11 @@
+<section class="movie-results container">
+  <h2>Results</h2>
+  <div class="results-list">
+    <figure ng-repeat="movie in results.movieResults" class="col-md-4">
+      <div class="inner panel panel-default">
+        <h4>{{movie.Title}}</h4>
+        <p>Year Released: {{movie.Year}}</p>
+      </div>
+    </figure>
+  </div>
+</section>

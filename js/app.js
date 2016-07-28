@@ -1,18 +1,17 @@
-angular
-  .module('MovieSearch', ['ui.router'])
-  .config(config)
+var app = angular.module("movieApp", ["ui.router"]);
 
-function config($stateProvider, $urlRouterProvider) {
-  $urlRouterProvider.otherwise('/');
+app.config(function($stateProvider, $urlRouterProvider) {
+  $urlRouterProvider.otherwise("/");
 
   $stateProvider
-  .state('home', {
-    url: '/',
-    controller: 'ResultsController',
-    templateUrl: '/templates/home.html'
-  }).state('home.list-movies', {
-    url: 'movies/:keywords?page',
-    controller: 'MoviesController',
-    templateUrl: '/templates/movies.html'
-  })
-}
+    .state("search", {
+      url: "/results/:id",
+      templateUrl: "/templates/results.html",
+      controller: "SearchController"
+    })
+    .state("show", {
+      url: "/show/:id",
+      templateUrl: "/templates/movies.html",
+      controller: "ShowController"
+    })
+})
